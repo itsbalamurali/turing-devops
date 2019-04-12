@@ -26,7 +26,7 @@ A single monitoring tool to visualize and monitor the health and resource utiliz
 ### Monitoring
 
 # P.S
-This setup can be improve and made in the following ways which cloudn't be done due to time constraints.
+This setup can be improved and made simpler in the following ways which cloudn't be done due to time constraints.
 
 * Setup KubernetesDNS.
 * Setup Node Autoscaler for AutoScaling Kubernetes Nodes in the event of high load.
