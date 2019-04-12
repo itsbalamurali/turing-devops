@@ -47,7 +47,38 @@ Load testing has been done using [Hey](https://github.com/rakyll/hey).
 
 ### Kubernetes Deployments
 
-* Deploy Prometheus & Grafana
+*Deploy Prometheus & Grafana*
+
+
+Step1: Create a namespace with name monitoring in the existing cluster .
+
+`kubectl create -f monitoring-namespace.yaml`
+
+Step2: Create a Cluster role and ConfigMap for prometheus configuration.
+
+`kubectl create -f prometheus-clusterrole.yaml`
+
+`kubectl create -f prometheus-config.yaml -n monitoring`
+
+Step3: Create a single pod for prometheus deployment and service to expose prometheus.
+
+`kubectl create -f prometheus-deployment.yaml --namespace=monitoring`
+
+Step5: Deploy grafana by creating its deployment and service.
+
+`kubectl create -f grafana.yaml`
+
+Step6: Goto services section in kubernetes engine in GCP and open grafana service and click on port forwarding and execute the command in your local to expose and see the grafana dashboard
+Kubernetes Engine---> Services---> grafana---> Ports---> Port forwarding---> copy the output command---> execute in your local dev machine.
+
+Step7: After exposing the port from the above output command, open your browser of your choice and navigate to `http://localhost:8080` and do the following things to add kubernetes dashboard to check the resource utilization of the cluster
+Click on the icon in the upper left of grafana and go to **“Data Sources”**.
+Click **“Add data source”**.
+For name, just use *“prometheus”*
+Select *“Prometheus”* as the type. Now just enter `http://prometheus:9090` in the datasource host config. This means that grafana will lookup the prometheus service running in the same namespace on port 9090.
+Create a New dashboard by clicking on the upper-left icon and select Import dashboard and type dashboard id 2115 (Predefined Kubernetes & Prometheus V2 Dashboard) and import the same! 
+
+Step8: Now you can start visualizing and monitoring the kubernetes cluster metrics for all the applications
 
 ![K8S](assets/k8s1.png)
 ![K8S](assets/k8s2.png)
