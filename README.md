@@ -26,6 +26,8 @@ Load testing has been done using [Hey](https://github.com/rakyll/hey).
     
 ### Github Setup
 
+![GH](assets/gh.png)
+
 ### Cloud Build Setup
 
 ![CB](assets/cb1.png)
@@ -35,7 +37,6 @@ Load testing has been done using [Hey](https://github.com/rakyll/hey).
 ![CB](assets/cb5.png)
 ![CB](assets/cb6.png)
 ![CB](assets/cb7.png)
-
 
 
 ### Kubernetes Deployments
