@@ -1,6 +1,6 @@
 steps:
 # This step deploys the new version of our container image
-# in the hello-cloudbuild Kubernetes Engine cluster.
+# in the Kubernetes Engine cluster.
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
   args:
@@ -9,7 +9,7 @@ steps:
   - 'kubernetes.yaml'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=your-first-cluster-1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=turing-devops-cluster'
 
 # This step copies the applied manifest to the production branch
 # The COMMIT_SHA variable is automatically
@@ -33,5 +33,5 @@ steps:
     # Commit the kubernetes.yaml file with a descriptive commit message
     git commit -m "Manifest from commit $COMMIT_SHA
     $(git log --format=%B -n 1 $COMMIT_SHA)" && \
-    # Push the changes back to Cloud Source Repository
+    # Push the changes back to source repository
     git push https://$GIT_USERNAME:$GIT_PUSHTOKEN@$GIT_REPO_URL.git production
