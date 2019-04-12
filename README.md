@@ -32,6 +32,17 @@ Load testing has been done using [Hey](https://github.com/rakyll/hey).
     
 ### Github Setup
 
+*Repository Setup*
+
+[*turing-vue*](https://github.com/itsbalamurali/turing-vue) for vue app, [*turing-react*](https://github.com/itsbalamurali/turing-react) for react app, [*turing-angular*](https://github.com/itsbalamurali/turing-angular) for angular app. These repositories contain a Dockerfile for the  and a cloudbuild.yaml for integrating github repo with Cloud Build in GCP and kubernetes.yaml.tpl file which is used as a template for kubernetes deployment manifest.
+
+*turing-devops* which contains a folder with name monitoring(files related to prometheus and grafana) and cloudbuild.yaml with 6 branches
+candidate-vue, candidate-react, candidate-angular
+production-vue, production-react, production-angula
+
+
+*Create Git Deploy Access Token*
+
 ![GH](assets/gh.png)
 
 ### Cloud Build Setup
