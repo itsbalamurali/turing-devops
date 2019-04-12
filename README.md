@@ -33,3 +33,4 @@ This setup can be improved and made simpler in the following ways which cloudn't
 * Setup much cleaner simple cloudbuild.yaml files avoid repeated steps across repos.
 * Setup builds for both git branches and release tags.
 * Better log monitoring
+* Setup Build & Deployment notifications to Slack, Email & Github Status etc.,
