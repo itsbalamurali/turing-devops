@@ -18,12 +18,50 @@ A single monitoring tool to visualize and monitor the health and resource utiliz
 * [VueJS](https://github.com/itsbalamurali/turing-vue)
 * [Angular](https://github.com/itsbalamurali/turing-angular)
 
+## Load Testing
+
+Load testing has been done using [Hey](https://github.com/rakyll/hey).
+
 ## Setup
     
 ### Github Setup
+
 ### Cloud Build Setup
-### Kubernetes Deployment
+
+![CB](assets/cb1.png)
+![CB](assets/cb2.png)
+![CB](assets/cb3.png)
+![CB](assets/cb4.png)
+![CB](assets/cb5.png)
+![CB](assets/cb6.png)
+![CB](assets/cb7.png)
+
+
+
+### Kubernetes Deployments
+
+* Deploy Prometheus & Grafana
+
+![K8S](assets/k8s1.png)
+![K8S](assets/k8s2.png)
+![K8S](assets/k8s3.png)
+![K8S](assets/k8s4.png)
+![K8S](assets/k8s5.png)
+
 ### Monitoring
+
+**Prometheus Metrics**
+
+![Prom](assets/prom1.png)
+![Prom](assets/prom2.png)
+![Prom](assets/prom3.png)
+
+**Grafana Visualizations**
+
+![Grafana](assets/grafana1.png)
+![Grafana](assets/grafana2.png)
+![Grafana](assets/grafana3.png)
+
 
 # P.S
 This setup can be improved and made simpler in the following ways which cloudn't be done due to time constraints.
