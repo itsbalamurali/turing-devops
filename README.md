@@ -13,5 +13,18 @@ A single monitoring tool to visualize and monitor the health and resource utiliz
 * Prometheus - To scrape the metric data and monitor Kubernetes
 * Grafana - To visualize the data and monitor the health of resources using the metrics queried from prometheus.
 
+# Auto Deployed Repositories
+* [React](https://github.com/itsbalamurali/turing-react)
+* [VueJS](https://github.com/itsbalamurali/turing-vue)
+* [Angular](https://github.com/itsbalamurali/turing-angular)
 ## Setup
     TODO
+
+# P.S
+This setup can be made in the following ways which cloudn't be done due to time constraints.
+
+* Setup KubernetesDNS.
+* Setup Node Autoscaler for AutoScaling Kubernetes Nodes in the event of high load.
+* Setup much cleaner simple cloudbuild.yaml files avoid repeated steps across repos.
+* Setup builds for both git branches and release tags.
+* Better log monitoring
