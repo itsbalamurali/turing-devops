@@ -32,7 +32,7 @@ steps:
     # Push the changes back to source repository
     git push https://${_GIT_USERNAME}:${_GIT_PUSHTOKEN}@${_GIT_REPO_URL}.git production
 substitutions:
-  - _GIT_USERNAME: itsbalamurali
-  - _GIT_EMAIL: balamurali@live.com
-  - _GIT_REPO_URL: github.com/itsbalamurali/turing-devops
-  - _GIT_PUSHTOKEN:
+  _GIT_USERNAME: itsbalamurali
+  _GIT_EMAIL: balamurali@live.com
+  _GIT_REPO_URL: github.com/itsbalamurali/turing-devops
+  _GIT_PUSHTOKEN: 
