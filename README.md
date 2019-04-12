@@ -13,6 +13,12 @@ A single monitoring tool to visualize and monitor the health and resource utiliz
 * Prometheus - To scrape the metric data and monitor Kubernetes
 * Grafana - To visualize the data and monitor the health of resources using the metrics queried from prometheus.
 
+## Architecture
+
+![ARCH](assets/arch.jpg)
+
+
+
 ## Auto Deployed Repositories
 * [React](https://github.com/itsbalamurali/turing-react)
 * [VueJS](https://github.com/itsbalamurali/turing-vue)
