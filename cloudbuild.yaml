@@ -19,6 +19,7 @@ steps:
   entrypoint: /bin/sh
   env:
   - 'GIT_USERNAME=itsbalamurali'
+  - 'GIT_EMAIL=balamurali@live.com'
   - 'GIT_REPO_URL=github.com/itsbalamurali/turing-devops'
   - 'GIT_PUSHTOKEN='
   args:
