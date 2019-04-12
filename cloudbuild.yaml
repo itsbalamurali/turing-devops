@@ -17,11 +17,6 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   id: Copy to production branch
   entrypoint: /bin/sh
-  env:
-  - '_GIT_USERNAME=itsbalamurali'
-  - '_GIT_EMAIL=balamurali@live.com'
-  - '_GIT_REPO_URL=github.com/itsbalamurali/turing-devops'
-  - '_GIT_PUSHTOKEN='
   args:
   - '-c'
   - |
@@ -36,3 +31,8 @@ steps:
     $(git log --format=%B -n 1 $COMMIT_SHA)" && \
     # Push the changes back to source repository
     git push https://${_GIT_USERNAME}:${_GIT_PUSHTOKEN}@${_GIT_REPO_URL}.git production
+substitutions:
+  - _GIT_USERNAME=itsbalamurali
+  - _GIT_EMAIL=balamurali@live.com
+  - _GIT_REPO_URL=github.com/itsbalamurali/turing-devops
+  - _GIT_PUSHTOKEN=
