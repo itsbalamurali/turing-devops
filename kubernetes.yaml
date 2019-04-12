@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-frontend
+  labels:
+    app: angular-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-frontend
+  template:
+    metadata:
+      labels:
+        app: angular-frontend
+    spec:
+      containers:
+      - name: angular-frontend
+        image: gcr.io/turingly/angular-frontend:f15d44b
+        resources:
+          limits:
+            cpu: "0.2"
+        ports:
+        - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: angular-frontend-loadbalancer
+spec:
+  selector:
+    app: angular-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+kind: HorizontalPodAutoscaler
+apiVersion: "autoscaling/v1"
+metadata: 
+ name: "angular-frontend-autoscaler"
+ namespace: default
+spec: 
+ scaleTargetRef: 
+  kind: Deployment
+  name: "angular-frontend"
+  apiVersion: "extensions/v1beta1"
+ minReplicas: 1
+ maxReplicas: 5
+ targetCPUUtilizationPercentage: 80
